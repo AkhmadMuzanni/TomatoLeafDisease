@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laurel Template</title>
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Playfair+Display:700" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/style.css">
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <title>Tomato Leaf Disease Detector</title>
+	<link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Playfair+Display:700" rel="stylesheet">
+
+	<!-- Core theme CSS (includes Bootstrap)-->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="dist/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="dist/css/bootstrap-reboot.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="dist/css/style.css">
+	<link rel="stylesheet" href="dist/css/custom.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+    
 </head>
+
 <body class="is-boxed has-animations">
     <div class="body-wrap boxed-container">
         <header class="site-header">
@@ -17,7 +30,7 @@
                     <div class="brand header-brand">
                         <h1 class="m-0">
                             <a href="#">
-								<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 									<title>Laurel</title>
 								    <defs>
 								        <linearGradient x1="0%" y1="100%" x2="50%" y2="0%" id="logo-a">
@@ -46,14 +59,17 @@
             <section class="hero">
                 <div class="container">
                     <div class="hero-inner">
-						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">Landing template for startups</h1>
-	                        <p class="hero-paragraph">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
-	                        <div class="hero-cta"><a class="button button-shadow" href="#">Learn more</a><a class="button button-primary button-shadow" href="#">Early access</a></div>
-						</div>
-						<div class="hero-app">
-							<div class="hero-app-illustration">
-								<svg width="999" height="931" xmlns="http://www.w3.org/2000/svg">
+                        <div class="hero-copy">
+                            <h1 class="hero-title mt-0">Tomato Leaf Disease Detector</h1>
+                            <p class="hero-paragraph">Detect potention of the disease of your tomato here</p>
+                            <div class="hero-cta">
+                                <a class="button button-shadow" href="#detection">CHECK NOW</a>
+                                <!-- <a class="button button-primary button-shadow" href="#">Early access</a> -->
+                            </div>
+                        </div>
+                        <div class="hero-app">
+                            <div class="hero-app-illustration">
+                                <svg width="999" height="931" xmlns="http://www.w3.org/2000/svg">
 								    <defs>
 								        <linearGradient x1="92.827%" y1="0%" x2="53.422%" y2="80.087%" id="hero-shape-a">
 								            <stop stop-color="#F9425F" offset="0%"/>
@@ -100,10 +116,10 @@
 										</g>
 								    </g>
 								</svg>
-							</div>
-							<img class="device-mockup" src="dist/images/iphone-mockup.png" alt="App preview">
+                            </div>
+                            <img class="device-mockup" src="dist/images/iphone-mockup.png" alt="App preview">
                             <div class="hero-app-dots hero-app-dots-1">
-								<svg width="124" height="75" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="124" height="75" xmlns="http://www.w3.org/2000/svg">
 								    <g fill="none" fill-rule="evenodd">
 								        <path fill="#FFF" d="M33.392 0l3.624 1.667.984 3.53-1.158 3.36L33.392 10l-3.249-1.639L28 5.196l1.62-3.674z"/>
 								        <path fill="#7487A3" d="M74.696 3l1.812.833L77 5.598l-.579 1.68L74.696 8l-1.624-.82L72 5.599l.81-1.837z"/>
@@ -113,8 +129,8 @@
 								    </g>
 								</svg>
                             </div>
-							<div class="hero-app-dots hero-app-dots-2">
-								<svg width="124" height="75" xmlns="http://www.w3.org/2000/svg">
+                            <div class="hero-app-dots hero-app-dots-2">
+                                <svg width="124" height="75" xmlns="http://www.w3.org/2000/svg">
 								    <g fill="none" fill-rule="evenodd">
 								        <path fill="#556B8B" d="M33.392 0l3.624 1.667.984 3.53-1.158 3.36L33.392 10l-3.249-1.639L28 5.196l1.62-3.674zM74.696 3l1.812.833L77 5.598l-.579 1.68L74.696 8l-1.624-.82L72 5.599l.81-1.837zM40.696 70l1.812.833.492 1.765-.579 1.68-1.725.722-1.624-.82L38 72.599l.81-1.837zM4.314 37l2.899 1.334L8 41.157l-.926 2.688L4.314 45l-2.6-1.31L0 41.156l1.295-2.94zM49.314 32l2.899 1.334.787 2.823-.926 2.688L49.314 40l-2.6-1.31L45 36.156l1.295-2.94z"/>
 								        <path fill="#FFF" d="M99.696 56l1.812.833.492 1.765-.579 1.68-1.725.722-1.624-.82L97 58.599l.81-1.837z"/>
@@ -123,21 +139,91 @@
 								        <path fill="#556B8B" d="M122.618 57l1.087.5.295 1.059-.347 1.008-1.035.433-.975-.492-.643-.95.486-1.101z"/>
 								    </g>
 								</svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</section>
+			
+			<section class="newsletter section" id="detection">
+                <div class="container-sm">
+                    <div class="newsletter-inner section-inner">
+                        <div class="newsletter-header text-center">
+                            <h2 class="section-title mt-0">Check Tomato Leaf Condition</h2>
+                            <p class="section-paragraph">Upload your tomato leaf to detect the diseases.</p>
+                        </div>
+                        <div class="footer-form newsletter-form field field-grouped">
+                            <div class="control control-expanded">
+								<input class="input" type="text" id="img-name" name="img-name" placeholder="Tap here to upload the photo...">
+								<input type="file" id="img-tomato" name="img-tomato" accept="image/*" >
+                            </div>
+                            <div class="control">
+                                <button class="button button-primary button-block button-shadow" id="btn-check">CHECK NOW</button>
+                            </div>
+						</div>
+						<div class="text-center" id="result-container">
+							<img src="dist/images/default.jpg" id="img-display" class="mx-auto d-block">
+							<div id="result">
+								<h6>Result</h6>
+								<p id="diagnosis">Your tomato have been diagnosed with : <strong>Healthy<strong></p>
 							</div>
 						</div>
+						
                     </div>
                 </div>
             </section>
 
-            <section class="features section">
+            <section class="media section">
+                <div class="container-sm">
+                    <div class="media-inner section-inner">
+                        <div class="media-header text-center">
+                            <h2 class="section-title mt-0">Know The Instructions</h2>
+                            <p class="section-paragraph mb-0">See the process to create this system</p>
+                        </div>
+                        <div class="media-canvas">
+                            <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+							    <defs>
+							        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="media-canvas">
+							            <stop stop-color="#06101F" offset="0%"/>
+							            <stop stop-color="#1D304B" offset="100%"/>
+							        </linearGradient>
+							    </defs>
+							    <rect width="800" height="450" rx="8" fill="url(#media-canvas)" fill-rule="evenodd"/>
+							</svg>
+                            <div class="media-control">
+                                <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+								    <defs>
+								        <linearGradient x1="87.565%" y1="15.873%" x2="17.086%" y2="80.538%" id="media-control">
+								            <stop stop-color="#FFF" stop-opacity=".64" offset="0%"/>
+								            <stop stop-color="#FFF" offset="100%"/>
+								        </linearGradient>
+										<filter x="-500%" y="-500%" width="1000%" height="1000%" filterUnits="objectBoundingBox" id="media-shadow">
+                                            <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter"></feOffset>
+                                            <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter" result="shadowBlurOuter"></feGaussianBlur>
+                                            <feColorMatrix values="0 0 0 0 0.024 0 0 0 0 0.064 0 0 0 0 0.12 0 0 0 0.24 0" in="shadowBlurOuter"></feColorMatrix>
+                                        </filter>
+								    </defs>
+								    <g fill="none" fill-rule="evenodd">
+								        <circle fill="#FFF" cx="48" cy="48" r="48" style="mix-blend-mode:multiply;filter:url(#media-shadow)"/>
+										<circle fill="url(#media-control)" cx="48" cy="48" r="48"/>
+								        <path d="M44.6 39.2a1.001 1.001 0 0 0-1.6.8v18a1.001 1.001 0 0 0 1.6.8l12-9a.998.998 0 0 0 0-1.6l-12-9z" fill="#1D304B"/>
+								    </g>
+								</svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features section" id="feature">
                 <div class="container">
-					<div class="features-inner section-inner has-bottom-divider">
-						<h2 class="section-title mt-0">Bold features</h2>
+                    <div class="features-inner section-inner has-bottom-divider">
+                        <h2 class="section-title mt-0">Bold features</h2>
                         <div class="features-wrap">
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
 										    <defs>
 										        <linearGradient x1="0%" y1="100%" x2="50%" y2="0%" id="feature-1-a">
 										            <stop stop-color="#F9425F" stop-opacity=".8" offset="0%"/>
@@ -159,10 +245,10 @@
                                     <p class="text-sm mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.</p>
                                 </div>
                             </div>
-							<div class="feature is-revealing">
+                            <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<svg width="68" height="64" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="68" height="64" xmlns="http://www.w3.org/2000/svg">
 										    <defs>
 										        <linearGradient x1="0%" y1="100%" x2="50%" y2="0%" id="feature-2-a">
 										            <stop stop-color="#F9425F" stop-opacity=".8" offset="0%"/>
@@ -187,7 +273,7 @@
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
 										    <defs>
 										        <linearGradient x1="50%" y1="100%" x2="50%" y2="43.901%" id="feature-3-a">
 										            <stop stop-color="#F97059" stop-opacity=".798" offset="0%"/>
@@ -217,7 +303,7 @@
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
 										    <defs>
 										        <linearGradient x1="0%" y1="100%" x2="50%" y2="0%" id="feature-4-a">
 										            <stop stop-color="#F9425F" stop-opacity=".8" offset="0%"/>
@@ -239,10 +325,10 @@
                                     <p class="text-sm mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.</p>
                                 </div>
                             </div>
-							<div class="feature is-revealing">
+                            <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
 										    <defs>
 										        <linearGradient x1="0%" y1="100%" x2="50%" y2="0%" id="feature-5-a">
 										            <stop stop-color="#F9425F" stop-opacity=".8" offset="0%"/>
@@ -268,7 +354,7 @@
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
 										    <defs>
 										        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="feature-6-a">
 										            <stop stop-color="#FDFFDA" offset="0%"/>
@@ -293,68 +379,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+			</section>
+           
 
-            <section class="media section">
-                <div class="container-sm">
-                    <div class="media-inner section-inner">
-                        <div class="media-header text-center">
-                            <h2 class="section-title mt-0">Meet Laurel</h2>
-                            <p class="section-paragraph mb-0">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</p>
-                        </div>
-						<div class="media-canvas">
-							<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
-							    <defs>
-							        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="media-canvas">
-							            <stop stop-color="#06101F" offset="0%"/>
-							            <stop stop-color="#1D304B" offset="100%"/>
-							        </linearGradient>
-							    </defs>
-							    <rect width="800" height="450" rx="8" fill="url(#media-canvas)" fill-rule="evenodd"/>
-							</svg>
-							<div class="media-control">
-								<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-								    <defs>
-								        <linearGradient x1="87.565%" y1="15.873%" x2="17.086%" y2="80.538%" id="media-control">
-								            <stop stop-color="#FFF" stop-opacity=".64" offset="0%"/>
-								            <stop stop-color="#FFF" offset="100%"/>
-								        </linearGradient>
-										<filter x="-500%" y="-500%" width="1000%" height="1000%" filterUnits="objectBoundingBox" id="media-shadow">
-                                            <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter"></feOffset>
-                                            <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter" result="shadowBlurOuter"></feGaussianBlur>
-                                            <feColorMatrix values="0 0 0 0 0.024 0 0 0 0 0.064 0 0 0 0 0.12 0 0 0 0.24 0" in="shadowBlurOuter"></feColorMatrix>
-                                        </filter>
-								    </defs>
-								    <g fill="none" fill-rule="evenodd">
-								        <circle fill="#FFF" cx="48" cy="48" r="48" style="mix-blend-mode:multiply;filter:url(#media-shadow)"/>
-										<circle fill="url(#media-control)" cx="48" cy="48" r="48"/>
-								        <path d="M44.6 39.2a1.001 1.001 0 0 0-1.6.8v18a1.001 1.001 0 0 0 1.6.8l12-9a.998.998 0 0 0 0-1.6l-12-9z" fill="#1D304B"/>
-								    </g>
-								</svg>
-							</div>
-						</div>
-                    </div>
-                </div>
-            </section>
-
-			<section class="newsletter section">
-                <div class="container-sm">
-                    <div class="newsletter-inner section-inner">
-                        <div class="newsletter-header text-center">
-                            <h2 class="section-title mt-0">Stay in the know</h2>
-                            <p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</p>
-                        </div>
-                        <div class="footer-form newsletter-form field field-grouped">
-                            <div class="control control-expanded">
-                                <input class="input" type="email" name="email" placeholder="Your best email&hellip;">
-                            </div>
-                            <div class="control">
-                                <a class="button button-primary button-block button-shadow" href="#">Early access</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <footer class="site-footer">
@@ -362,7 +389,7 @@
                 <div class="site-footer-inner has-top-divider">
                     <div class="brand footer-brand">
                         <a href="#">
-							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 								<title>Laurel</title>
 								<defs>
 									<linearGradient x1="0%" y1="100%" x2="50%" y2="0%" id="logo-footer-a">
@@ -422,12 +449,15 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="footer-copyright">&copy; 2018 Laurel, all rights reserved</div>
+                    <div class="footer-copyright">&copy; 2020 Akhmad Muzanni Safi'i, Template by Laurel, all rights reserved</div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script src="dist/js/main.min.js"></script>
+	<script src="dist/js/main.min.js"></script>
+	<script src="model.js"></script>
+    <script src="tomato.js"></script>
 </body>
+
 </html>
