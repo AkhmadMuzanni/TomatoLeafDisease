@@ -29,7 +29,7 @@ $("#btn-check").click(function() {
     let $ = document.getElementById.bind(document);
     tomato.tensorImage = tf.browser.fromPixels($("img-display"));
 
-    tfResize = tf.image.resizeBilinear(tomato.tensorImage, [150, 150]);
+    tfResize = tf.image.resizeBilinear(tomato.tensorImage, [128, 128]);
     tomato.prediction = tomato.model._model.predict(tfResize.expandDims(0)).as1D();
     tomato.argMax = tomato.prediction.argMax().dataSync()[0]
     tomato.maxValue = tomato.prediction.max().dataSync()[0]

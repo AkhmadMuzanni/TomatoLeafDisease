@@ -34,7 +34,7 @@ class Model {
      */
     warmUp() {
         console.time("Warmup")
-        this._model.predict(tf.randomNormal([1, 150, 150, 3])).as1D().dataSync()
+        this._model.predict(tf.randomNormal([1, 128, 128, 3])).as1D().dataSync()
         this.isWarmedUp = true;
         console.timeEnd("Warmup")
     }
