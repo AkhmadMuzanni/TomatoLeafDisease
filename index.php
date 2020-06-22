@@ -456,6 +456,7 @@
     </div>
 
 	<script src="dist/js/main.min.js"></script>
+	<?php include 'firebase.php' ?> 
 	<script src="model.js"></script>
     <script src="tomato.js"></script>
 </body>
