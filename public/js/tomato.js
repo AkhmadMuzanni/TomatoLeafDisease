@@ -68,4 +68,5 @@ function readURL(input) {
 $("#img-tomato").change(function() {
     $('#img-name').val($('#img-tomato').val().replace(/^.*\\/, ""));
     readURL(this);
+    $('#result').hide();
 });
