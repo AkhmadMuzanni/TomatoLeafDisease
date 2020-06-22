@@ -7,3 +7,13 @@
 #img-name {
     cursor: pointer;
 }
+
+#btn-check:disabled {
+    background-color: grey;
+}
+
+@media only screen and (max-width: 768px) {
+    #btn-check {
+        width: 100%;
+    }
+}

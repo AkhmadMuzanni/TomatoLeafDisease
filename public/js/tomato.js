@@ -43,6 +43,7 @@ $("#btn-check").click(function() {
 // =============== Visualization ================
 
 console.log($('#img-tomato'));
+$('#btn-check').prop('disabled', true);
 $('#img-tomato').hide();
 $('#feature').hide();
 $('#result').hide();
