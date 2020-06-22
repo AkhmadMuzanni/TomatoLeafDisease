@@ -37,6 +37,7 @@ class Model {
         this._model.predict(tf.randomNormal([1, 128, 128, 3])).as1D().dataSync()
         this.isWarmedUp = true;
         $('#btn-check').prop('disabled', false);
+        $('#btn-check').html('CHECK NOW');
         console.timeEnd("Warmup")
     }
 

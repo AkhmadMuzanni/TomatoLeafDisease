@@ -44,6 +44,7 @@ $("#btn-check").click(function() {
 
 console.log($('#img-tomato'));
 $('#btn-check').prop('disabled', true);
+$('#btn-check').html('PLEASE WAIT...');
 $('#img-tomato').hide();
 $('#feature').hide();
 $('#result').hide();
